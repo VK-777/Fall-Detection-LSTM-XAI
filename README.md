@@ -49,6 +49,12 @@ The model is evaluated on the **KFall** dataset and compared with the **MobiFall
 
 ---
 
+<h2>🧠 Workflow Diagram</h2>
+<p align="center">
+  <img src="assets/workflow.png" alt="Workflow Diagram" width="500"/>
+</p>
+
+---
 ## 🛠️ Installation
 
 Clone the repository and install dependencies:
