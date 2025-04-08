@@ -14,7 +14,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 
 # Hyperparameters
 BATCH_SIZE = 16
-EPOCHS = 15
+EPOCHS = 25     # Increase 20 - 25
 SEQ_LENGTH = 500
 
 # Split dataset
@@ -40,8 +40,8 @@ def build_model():
 def train_model_k():
     model = build_model()
     model.summary()
-    early_stop = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
-    history = model.fit(X_train, y_train, batch_size=BATCH_SIZE, epochs=EPOCHS, validation_data=(X_test, y_test), callbacks=[early_stop])
+    # early_stop = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
+    history = model.fit(X_train, y_train, batch_size=BATCH_SIZE, epochs=EPOCHS, validation_data=(X_test, y_test)) #callbacks=[early_stop]
     model.save("kfall_lstm.h5")
     print("Model saved as 'kfall_lstm.h5'")
 

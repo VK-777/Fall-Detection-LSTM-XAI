@@ -18,7 +18,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 
 # Hyperparameters
 BATCH_SIZE = 16  # Increased batch size for faster training
-EPOCHS = 15
+EPOCHS = 25       # Increase 20 - 25
 MAX_LEN = 500  # Set a reasonable max sequence length
 
 
@@ -92,8 +92,8 @@ def train_model_mobifall():
     model.summary()
 
     # Train Model with Early Stopping
-    early_stop = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
-    history = model.fit(train_dataset, validation_data=val_dataset, epochs=EPOCHS, callbacks=[early_stop])
+    # early_stop = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
+    history = model.fit(train_dataset, validation_data=val_dataset, epochs=EPOCHS) # callbacks=[early_stop]
 
     # Plot Loss
     plt.plot(history.history['loss'], label='Train Loss')
